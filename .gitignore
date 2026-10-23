@@ -1,0 +1,80 @@
+.Rproj.user
+
+/.quarto/
+**/*.quarto_ipynb
+*/.posit
+
+# RStudio
+.Rproj.user
+
+# Quarto
+/.quarto/
+**/*.quarto_ipynb
+
+# R
+.RData
+.Rhistory
+.Rprofile
+.Rproj.user
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Data
+*.csv
+*.tsv
+*.xlsx
+*.json
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Temporary
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.aux
+*.out
+*.toc
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Build
+build/
+
+# Test
+test-results/
+
+# Documentation
+docs/
+README_personal.md
+
+# Cache
+.Rproj.user
+/.quarto/
+**/*.quarto_ipynb
+*/.posit

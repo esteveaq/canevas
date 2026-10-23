@@ -1,0 +1,16 @@
+Package: canevas
+Title: Personal R script template (EA)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Esteve", "Aqachmar", , "first.last@example.com", role = c("aut", "cre"))
+Description: Provides reusable functions and templates for R projects.
+Imports:
+    ggplot2,
+    jsonlite
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
