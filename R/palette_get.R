@@ -1,9 +1,25 @@
-
-#' Get a client's color palette
+#' Get a Client's Color Palette
 #'
-#' @param client Client name
+#' Retrieve the named colors configured for a client.
 #'
-#' @return A named character vector of colors
+#' @param client Character string identifying the client.
+#'
+#' @details
+#' Colors are stored in a JSON configuration file at
+#' `~/.config/r-config/config_colors.json`.
+#' The file contains a `clients` object, with each client
+#' defining a named set of colors. See the package README for instructions on creating
+#' the configuration file.
+#'
+#' @return A named character vector of colors.
+#'
+#'
+#' @examples
+#' \dontrun{
+#' colors <- palette_get("client_a")
+#' print(colors)
+#' }
+#'
 #' @export
 palette_get <- function(client) {
 
@@ -23,11 +39,24 @@ palette_get <- function(client) {
 }
 
 
-
-#' Apply a client's colors to ggplot2 colour
+#' Apply a Client's Colors to ggplot2
 #'
-#' @param client Client name
-#' @param ... Additional arguments passed to [ggplot2::scale_color_manual()]
+#' Apply a client's color palette to the color aesthetic in a ggplot2 plot.
+#'
+#' @param client Character string identifying the client.
+#' @param ... Additional arguments passed to
+#'   [ggplot2::scale_color_manual()].
+#'
+#' @return A ggplot2 scale object.
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#'
+#' ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+#'   geom_point() +
+#'   scale_color_client("client_a")
+#' }
 #'
 #' @export
 scale_color_client <- function(client, ...) {
@@ -38,11 +67,24 @@ scale_color_client <- function(client, ...) {
 }
 
 
-
-#' Apply a client's colors to ggplot2 fill
+#' Apply a Client's Colors to ggplot2 Fill
 #'
-#' @param client Client name
-#' @param ... Additional arguments passed to [ggplot2::scale_fill_manual()]
+#' Apply a client's color palette to the fill aesthetic in a ggplot2 plot.
+#'
+#' @param client Character string identifying the client.
+#' @param ... Additional arguments passed to
+#'   [ggplot2::scale_fill_manual()].
+#'
+#' @return A ggplot2 scale object.
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#'
+#' ggplot(iris, aes(x = Species, fill = Species)) +
+#'   geom_bar() +
+#'   scale_fill_client("client_a")
+#' }
 #'
 #' @export
 scale_fill_client <- function(client, ...) {

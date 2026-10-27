@@ -2,15 +2,29 @@
 % Please edit documentation in R/palette_get.R
 \name{scale_fill_client}
 \alias{scale_fill_client}
-\title{Apply a client's colors to ggplot2 fill}
+\title{Apply a Client's Colors to ggplot2 Fill}
 \usage{
 scale_fill_client(client, ...)
 }
 \arguments{
-\item{client}{Client name}
+\item{client}{Character string identifying the client.}
 
-\item{...}{Additional arguments passed to \code{\link[ggplot2:scale_fill_manual]{ggplot2::scale_fill_manual()}}}
+\item{...}{Additional arguments passed to
+\code{\link[ggplot2:scale_fill_manual]{ggplot2::scale_fill_manual()}}.}
+}
+\value{
+A ggplot2 scale object.
 }
 \description{
-Apply a client's colors to ggplot2 fill
+Apply a client's color palette to the fill aesthetic in a ggplot2 plot.
+}
+\examples{
+\dontrun{
+library(ggplot2)
+
+ggplot(iris, aes(x = Species, fill = Species)) +
+  geom_bar() +
+  scale_fill_client("client_a")
+}
+
 }

@@ -2,16 +2,30 @@
 % Please edit documentation in R/palette_get.R
 \name{palette_get}
 \alias{palette_get}
-\title{Get a client's color palette}
+\title{Get a Client's Color Palette}
 \usage{
 palette_get(client)
 }
 \arguments{
-\item{client}{Client name}
+\item{client}{Character string identifying the client.}
 }
 \value{
-A named character vector of colors
+A named character vector of colors.
 }
 \description{
-Get a client's color palette
+Retrieve the named colors configured for a client.
+}
+\details{
+Colors are stored in a JSON configuration file at
+\verb{~/.config/r-config/config_colors.json}.
+The file contains a \code{clients} object, with each client
+defining a named set of colors. See the package README for instructions on creating
+the configuration file.
+}
+\examples{
+\dontrun{
+colors <- palette_get("client_a")
+print(colors)
+}
+
 }

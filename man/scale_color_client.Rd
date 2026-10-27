@@ -2,15 +2,29 @@
 % Please edit documentation in R/palette_get.R
 \name{scale_color_client}
 \alias{scale_color_client}
-\title{Apply a client's colors to ggplot2 colour}
+\title{Apply a Client's Colors to ggplot2}
 \usage{
 scale_color_client(client, ...)
 }
 \arguments{
-\item{client}{Client name}
+\item{client}{Character string identifying the client.}
 
-\item{...}{Additional arguments passed to \code{\link[ggplot2:scale_color_manual]{ggplot2::scale_color_manual()}}}
+\item{...}{Additional arguments passed to
+\code{\link[ggplot2:scale_color_manual]{ggplot2::scale_color_manual()}}.}
+}
+\value{
+A ggplot2 scale object.
 }
 \description{
-Apply a client's colors to ggplot2 colour
+Apply a client's color palette to the color aesthetic in a ggplot2 plot.
+}
+\examples{
+\dontrun{
+library(ggplot2)
+
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point() +
+  scale_color_client("client_a")
+}
+
 }
